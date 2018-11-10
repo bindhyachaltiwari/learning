@@ -1,0 +1,30 @@
+<div class="js-decisionguide-question c-decisionguide__question-container">
+    <div class="c-decisionguide__topic-name">{{headline}}</div>
+    <div class="c-decisionguide__question-wrapper js-decisionguide-question-wrapper">
+        <div class="c-decisionguide__question">{{description}}</div>
+        <div class="c-decisionguide__answer-wrapper">
+            <form>
+            {{#each answerMap}}
+                
+                {{#if ../isCheckbox}}
+                    <div class="c-decisionguide__answer checkbox">
+                        <label>
+                            <input class="js-decision-answer" name="decisionguideAns" data-answer-tag="{{answerTag}}" data-answer-short-desc="{{desc}}" value="{{answerId}}" type="checkbox" />
+                            <span class="customCheckbox"></span>
+                            <span class="c-decisionguide__answer-text"> {{answer}}</span>
+                        </label>
+                    </div>
+                {{else}}
+                    <div class="c-decisionguide__answer radio">
+                        <label>
+                            <input class="js-decision-answer" name="decisionguideAns" data-answer-tag="{{answerTag}}" data-answer-short-desc="{{desc}}" value="{{answerId}}" type="radio" />
+                            <span class="customRadio"></span>
+                            <span class="c-decisionguide__answer-text"> {{answer}}</span>
+                        </label>
+                    </div>
+                {{/if}}
+            {{/each}}
+            </form>
+        </div>
+    </div>
+</div>
